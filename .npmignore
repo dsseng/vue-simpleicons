@@ -1,0 +1,11 @@
+.rpt2_cache
+.editorconfig
+.eslintrc
+.eslintignore
+.travis.yml
+rollup.config.js
+.git
+.gitignore
+tsconfig.json
+src
+*.tgz

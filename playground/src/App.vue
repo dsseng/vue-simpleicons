@@ -1,3 +1,3 @@
 <template>
-  <div id="app"><v-simple-icon name="Google" /></div>
+  <div id="app"><vue-simple-icon name="Google" /></div>
 </template>

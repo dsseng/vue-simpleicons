@@ -4,14 +4,13 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 import SimpleIcons from "simple-icons";
 
-@Component<VSimpleIcon>({
+@Component<VueSimpleIcon>({
   render(h: Function): VNode {
     const icon = SimpleIcons[this.name];
     const path = icon.svg.slice(
       icon.svg.indexOf('d="') + 3,
       icon.svg.lastIndexOf('"')
     );
-    console.log(path);
     return h("svg", {}, [
       h("path", {
         attrs: {
@@ -21,7 +20,7 @@ import SimpleIcons from "simple-icons";
     ]);
   }
 })
-export default class VSimpleIcon extends Vue {
+export default class VueSimpleIcon extends Vue {
   @Prop()
   name!: string;
 }

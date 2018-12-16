@@ -1,7 +1,7 @@
-import VSimpleIcon from "./VSimpleIcon";
+import VueSimpleIcon from "./VueSimpleIcon";
 
 export default {
   install: (vue: any) => {
-    vue.component("VSimpleIcon", VSimpleIcon);
+    vue.component("VueSimpleIcon", VueSimpleIcon);
   }
 };

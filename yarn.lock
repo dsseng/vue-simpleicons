@@ -1499,6 +1499,11 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
 
+simple-icons@^1.9.15:
+  version "1.9.15"
+  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-1.9.15.tgz#f0ecdfce846183edde51a8454b36f23a37d3f8d6"
+  integrity sha512-MJGau9y8gvfQgN2+aaXVb9R6b4wMeDmvkWy/7cfeKvOorQcA5fIqNt/50RhwIadauw4+6qPybvnNoSBDjMDuBA==
+
 slash@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"

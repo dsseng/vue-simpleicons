@@ -28,7 +28,8 @@
     "build": "rollup -c",
     "test": "yarn lint",
     "prepack": "yarn build",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "dev": "cd playground && yarn serve"
   },
   "dependencies": {
     "simple-icons": "^1.9.15",

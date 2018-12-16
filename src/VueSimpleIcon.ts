@@ -14,7 +14,9 @@ import SimpleIcons from "simple-icons";
     return h("svg", {}, [
       h("path", {
         attrs: {
-          d: path
+          d: path,
+          fill: this.color || "#" + icon.hex,
+          stroke: this.color || "#" + icon.hex
         }
       })
     ]);
@@ -23,4 +25,7 @@ import SimpleIcons from "simple-icons";
 export default class VueSimpleIcon extends Vue {
   @Prop()
   name!: string;
+
+  @Prop()
+  color!: string;
 }

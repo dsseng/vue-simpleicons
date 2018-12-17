@@ -7,21 +7,24 @@ import SimpleIcons from "simple-icons";
 @Component<VueSimpleIcon>({
   render(h: Function): VNode {
     const icon = SimpleIcons[this.name];
-    const path = icon.svg.slice(
-      icon.svg.indexOf('d="') + 3,
-      icon.svg.lastIndexOf('"')
-    );
-    const title = icon.svg.slice(
-      icon.svg.indexOf("<title>") + 7,
-      icon.svg.lastIndexOf("</title>")
-    );
+    const svg = this.parser.parseFromString(icon.svg, "image/svg+xml");
+    let paths: string[] = [];
+    let title: string = "";
+    svg.firstChild &&
+      svg.firstChild.childNodes.forEach((node: any) => {
+        if (node.nodeName === "path") paths.push(node.attributes.d.nodeValue);
+        else if (node.nodeName === "title") title = node.textContent;
+      });
+
     return h("svg", {}, [
       h("title", {}, [title]),
-      h("path", {
-        attrs: {
-          d: path,
-          fill: this.color || "#" + icon.hex
-        }
+      ...paths.map(d => {
+        return h("path", {
+          attrs: {
+            d: d,
+            fill: this.color || "#" + icon.hex
+          }
+        });
       })
     ]);
   }
@@ -32,4 +35,11 @@ export default class VueSimpleIcon extends Vue {
 
   @Prop()
   color!: string;
+
+  parser: DOMParser;
+
+  constructor() {
+    super();
+    this.parser = new DOMParser();
+  }
 }

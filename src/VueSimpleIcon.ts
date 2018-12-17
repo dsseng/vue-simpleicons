@@ -15,8 +15,7 @@ import SimpleIcons from "simple-icons";
       h("path", {
         attrs: {
           d: path,
-          fill: this.color || "#" + icon.hex,
-          stroke: this.color || "#" + icon.hex
+          fill: this.color || "#" + icon.hex
         }
       })
     ]);

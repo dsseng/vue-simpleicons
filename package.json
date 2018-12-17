@@ -36,10 +36,5 @@
     "vue": "^2.5.21",
     "vue-class-component": "^6.3.2",
     "vue-property-decorator": "^7.2.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn fix && yarn test"
-    }
   }
 }

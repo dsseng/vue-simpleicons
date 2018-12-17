@@ -16,7 +16,7 @@ import SimpleIcons from "simple-icons";
         if (_node.nodeName === "path") {
           const dAttr = _node.attributes.getNamedItem("d") || new Attr();
           const d = dAttr.nodeValue;
-          
+
           children.push(
             h("path", {
               attrs: {

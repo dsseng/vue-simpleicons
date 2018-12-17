@@ -3,6 +3,5 @@ node_js:
   - node
   - lts/*
   - v8
-  - v6
 install:
   yarn

@@ -21,7 +21,8 @@
     "rollup": "^0.68.0",
     "rollup-plugin-typescript2": "^0.18.1",
     "typescript": "^3.2.2",
-    "typescript-eslint-parser": "^21.0.2"
+    "typescript-eslint-parser": "^21.0.2",
+    "vuepress": "^0.14.8"
   },
   "scripts": {
     "lint": "eslint . src/*.ts",
@@ -30,7 +31,9 @@
     "test": "yarn lint",
     "prepack": "yarn build",
     "commit": "git-cz",
-    "dev": "cd playground && yarn serve"
+    "dev": "cd playground && yarn serve",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "simple-icons": "^1.9.15",

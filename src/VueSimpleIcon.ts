@@ -11,7 +11,12 @@ import SimpleIcons from "simple-icons";
       icon.svg.indexOf('d="') + 3,
       icon.svg.lastIndexOf('"')
     );
+    const title = icon.svg.slice(
+      icon.svg.indexOf("<title>") + 7,
+      icon.svg.lastIndexOf("</title>")
+    );
     return h("svg", {}, [
+      h("title", {}, [title]),
       h("path", {
         attrs: {
           d: path,

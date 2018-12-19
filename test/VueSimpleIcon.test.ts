@@ -1,4 +1,4 @@
-import { createLocalVue, shallowMount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import VueSimpleIcon from "../src/VueSimpleIcon";
 
 describe('VueSimpleIcon', () => {

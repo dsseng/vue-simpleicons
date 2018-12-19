@@ -5,4 +5,8 @@ node_js:
   - v8
   - v6
 install:
-  yarn
+  - npm install -g codecov
+  - yarn
+script:
+  - yarn test
+  - codecov

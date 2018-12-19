@@ -4,4 +4,8 @@ node_js:
   - lts/*
   - v8
 install:
-  yarn
+  - npm install -g codecov
+  - yarn
+script:
+  - yarn test
+  - codecov

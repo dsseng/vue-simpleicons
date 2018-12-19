@@ -26,7 +26,7 @@ import SimpleIcons from "simple-icons";
             })
           );
         } else if (_node.nodeName === "title")
-          children.push(h("title", {}, [_node.textContent]));
+          children.push(h("title", {}, [this.title || _node.textContent]));
       });
 
     return h("svg", {}, children);
@@ -38,6 +38,9 @@ export default class VueSimpleIcon extends Vue {
 
   @Prop()
   color!: string;
+
+  @Prop()
+  title!: string;
 
   parser: DOMParser;
 

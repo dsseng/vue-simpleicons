@@ -30,9 +30,10 @@
   },
   "scripts": {
     "lint": "eslint . src/*.ts",
+    "unit": "jest",
     "fix": "eslint . src/*.ts --fix",
     "build": "rollup -c",
-    "test": "yarn lint",
+    "test": "yarn lint && yarn unit",
     "prepack": "yarn build",
     "commit": "git-cz",
     "dev": "cd playground && yarn serve"

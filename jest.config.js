@@ -1,4 +1,6 @@
 module.exports = {
   preset: "ts-jest",
-  testEnvironment: "jsdom"
+  testEnvironment: "jsdom",
+  coverageDirectory: "./coverage/",
+  collectCoverage: true
 };

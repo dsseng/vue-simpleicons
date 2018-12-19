@@ -42,4 +42,15 @@ describe('VueSimpleIcon', () => {
 
     expect(wrapper.find('path').attributes('fill')).toBe('#123ABC');
   });
+
+  it('should render icon with custom title', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Travis CI',
+        title: 'Build passed'
+      }
+    });
+
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 });

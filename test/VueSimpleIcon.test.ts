@@ -31,4 +31,15 @@ describe('VueSimpleIcon', () => {
 
     expect(wrapper.findAll('title').length).toBe(1);
   });
+
+  it('should render icon with custom color', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Travis CI',
+        color: '#123ABC'
+      }
+    });
+
+    expect(wrapper.find('path').attributes('fill')).toBe('#123ABC');
+  });
 });

@@ -53,4 +53,16 @@ describe('VueSimpleIcon', () => {
 
     expect(wrapper.html()).toMatchSnapshot();
   });
+
+  it('should render error if name is invalid', () => {
+    console.error = jest.fn();
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Invalid name'
+      }
+    });
+    
+    expect(console.error).toHaveBeenCalled();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 });

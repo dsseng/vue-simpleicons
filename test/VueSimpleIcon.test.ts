@@ -11,4 +11,14 @@ describe('VueSimpleIcon', () => {
 
     expect(wrapper.html()).toMatchSnapshot();
   });
+
+  it('should render icon with multiple paths', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Travis CI'
+      }
+    });
+
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 });

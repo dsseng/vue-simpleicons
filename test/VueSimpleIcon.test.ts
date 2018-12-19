@@ -21,4 +21,14 @@ describe('VueSimpleIcon', () => {
 
     expect(wrapper.html()).toMatchSnapshot();
   });
+
+  it('should include title', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Travis CI'
+      }
+    });
+
+    expect(wrapper.findAll('title').length).toBe(1);
+  });
 });

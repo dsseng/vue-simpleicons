@@ -2,7 +2,8 @@ module.exports = {
   themeConfig: {
     sidebar: [
       '/',
-      '/API'
+      '/API',
+      '/usage'
     ],
     repo: 'sh7dm/vue-simple-icons',
     repoLabel: 'Contribute!',

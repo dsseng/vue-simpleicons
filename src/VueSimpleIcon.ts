@@ -30,7 +30,17 @@ import SimpleIcons from "simple-icons";
           children.push(h("title", {}, [this.title || _node.textContent]));
       });
 
-    return h("svg", {}, children);
+    return h(
+      "svg",
+      {
+        attrs: {
+          width: this.iconSize,
+          height: this.iconSize,
+          viewBox: "0 0 24 24"
+        }
+      },
+      children
+    );
   }
 })
 export default class VueSimpleIcon extends Vue {
@@ -44,6 +54,26 @@ export default class VueSimpleIcon extends Vue {
 
   @Prop()
   title!: string;
+
+  @Prop()
+  small!: string;
+  @Prop()
+  medium!: string;
+  @Prop()
+  large!: string;
+  @Prop()
+  xLarge!: string;
+  @Prop()
+  size!: string | number;
+
+  get iconSize() {
+    if (this.small !== undefined) return 12;
+    if (this.medium !== undefined) return 24;
+    if (this.large !== undefined) return 36;
+    if (this.xLarge !== undefined) return 48;
+    if (this.size !== undefined) return this.size;
+    return 24;
+  }
 
   parser: DOMParser;
 

@@ -15,6 +15,7 @@ import SimpleIcons from "simple-icons";
         const _node = node as HTMLElement;
 
         if (_node.nodeName === "path") {
+          /* istanbul ignore next */
           const dAttr = _node.attributes.getNamedItem("d") || new Attr();
           const d = dAttr.nodeValue;
 
@@ -26,7 +27,8 @@ import SimpleIcons from "simple-icons";
               }
             })
           );
-        } else if (_node.nodeName === "title")
+        }
+        if (_node.nodeName === "title")
           children.push(h("title", {}, [this.title || _node.textContent]));
       });
 

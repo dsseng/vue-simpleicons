@@ -5,34 +5,37 @@ import { Prop } from "vue-property-decorator";
 import SimpleIcons from "simple-icons";
 
 @Component<VueSimpleIcon>({
-  render(h: Function): VNode {
+  render(createElement: Function): VNode {
     const icon = SimpleIcons[this.name];
-    if (!icon) return renderError(h);
+    if (!icon) return renderError(createElement);
+
     const svg = this.parser.parseFromString(icon.svg, "image/svg+xml");
     let children: VNode[] = [];
     svg.firstChild &&
-      svg.firstChild.childNodes.forEach(node => {
-        const _node = node as HTMLElement;
+      svg.firstChild.childNodes.forEach(_node => {
+        const node = _node as HTMLElement;
 
-        if (_node.nodeName === "path") {
+        if (node.nodeName === "path") {
           /* istanbul ignore next */
-          const dAttr = _node.attributes.getNamedItem("d") || new Attr();
+          const dAttr = node.attributes.getNamedItem("d") || new Attr();
           const d = dAttr.nodeValue;
 
           children.push(
-            h("path", {
+            createElement("path", {
               attrs: {
                 d: d,
                 fill: this.color || "#" + icon.hex
               }
             })
           );
+        } else if (node.nodeName === "title") {
+          children.push(
+            createElement("title", {}, [this.title || node.textContent])
+          );
         }
-        if (_node.nodeName === "title")
-          children.push(h("title", {}, [this.title || _node.textContent]));
       });
 
-    return h(
+    return createElement(
       "svg",
       {
         attrs: {
@@ -47,7 +50,7 @@ import SimpleIcons from "simple-icons";
 })
 export default class VueSimpleIcon extends Vue {
   @Prop({
-    validator: x => Object.keys(SimpleIcons).indexOf(x) !== -1
+    validator: name => Object.keys(SimpleIcons).indexOf(name) !== -1
   })
   name!: string;
 

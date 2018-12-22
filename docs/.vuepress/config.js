@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: ['@vuepress/pwa'],
   themeConfig: {
     repo: 'sh7dm/vue-simple-icons',
     docsDir: 'docs',

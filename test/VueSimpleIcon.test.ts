@@ -65,4 +65,69 @@ describe('VueSimpleIcon', () => {
     expect(console.error).toHaveBeenCalled();
     expect(wrapper.html()).toMatchSnapshot();
   });
+
+  it('should render small icon', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Travis CI',
+        small: true
+      }
+    });
+    
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should render medium icon', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Travis CI',
+        medium: true
+      }
+    });
+    
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should render large icon', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Travis CI',
+        large: true
+      }
+    });
+    
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should render xLarge icon', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Travis CI',
+        xLarge: true
+      }
+    });
+    
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should render custom size icon', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Travis CI',
+        size: 100
+      }
+    });
+    
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should render medium icon by default', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Travis CI'
+      }
+    });
+    
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 });

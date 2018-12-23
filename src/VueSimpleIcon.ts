@@ -48,33 +48,34 @@ import SimpleIcons from "simple-icons";
 })
 export default class VueSimpleIcon extends Vue {
   @Prop({
+    type: String,
     validator: x => Object.keys(SimpleIcons).indexOf(x) !== -1
   })
   name!: string;
 
-  @Prop()
+  @Prop(String)
   color!: string;
 
-  @Prop()
+  @Prop(String)
   title!: string;
 
-  @Prop()
+  @Prop(Boolean)
   small!: string;
-  @Prop()
+  @Prop(Boolean)
   medium!: string;
-  @Prop()
+  @Prop(Boolean)
   large!: string;
-  @Prop()
+  @Prop(Boolean)
   xLarge!: string;
-  @Prop()
+  @Prop([String, Number])
   size!: string | number;
 
   get iconSize() {
-    if (this.small !== undefined) return 12;
-    if (this.medium !== undefined) return 24;
-    if (this.large !== undefined) return 36;
-    if (this.xLarge !== undefined) return 48;
-    if (this.size !== undefined) return this.size;
+    if (this.small) return 12;
+    if (this.medium) return 24;
+    if (this.large) return 36;
+    if (this.xLarge) return 48;
+    if (this.size) return this.size;
     return 24;
   }
 

@@ -40,7 +40,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.find('path').attributes('fill')).toBe('#123ABC');
+    expect(wrapper.find('svg').attributes('fill')).toBe('#123ABC');
   });
 
   it('should render icon with custom title', () => {

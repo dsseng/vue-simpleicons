@@ -9,42 +9,25 @@ import SimpleIcons from "simple-icons";
     const icon = SimpleIcons[this.name];
     if (!icon) return renderError("Icon not found", createElement);
 
-    const svg = this.parser.parseFromString(icon.svg, "image/svg+xml");
-    if (!svg.firstChild) return renderError("Error in icon", createElement);
+    let svgContent = icon.svg.replace(/<\/?svg[^>]*>/, "");
+    if (this.title) {
+      svgContent = svgContent.replace(
+        /<title>.*<\/title>/,
+        `<title>${this.title}</title>`
+      );
+    }
 
-    let children: VNode[] = [];
-    svg.firstChild.childNodes.forEach(_node => {
-      const node = _node as HTMLElement;
-
-      if (node.nodeName === "path") {
-        /* istanbul ignore next */
-        const dAttr = node.attributes.getNamedItem("d") || new Attr();
-        const d = dAttr.nodeValue;
-
-        children.push(
-          createElement("path", {
-            attrs: {
-              d: d,
-              fill: this.color || "#" + icon.hex
-            }
-          })
-        );
-      } else if (node.nodeName === "title") {
-        children.push(createElement("title", this.title || node.textContent));
+    return createElement("svg", {
+      attrs: {
+        fill: this.color || `#${icon.hex}`,
+        width: this.iconSize,
+        height: this.iconSize,
+        viewBox: "0 0 24 24"
+      },
+      domProps: {
+        innerHTML: svgContent
       }
     });
-
-    return createElement(
-      "svg",
-      {
-        attrs: {
-          width: this.iconSize,
-          height: this.iconSize,
-          viewBox: "0 0 24 24"
-        }
-      },
-      children
-    );
   }
 })
 export default class VueSimpleIcon extends Vue {
@@ -79,11 +62,8 @@ export default class VueSimpleIcon extends Vue {
     return 24;
   }
 
-  parser: DOMParser;
-
   constructor() {
     super();
-    this.parser = new DOMParser();
   }
 }
 

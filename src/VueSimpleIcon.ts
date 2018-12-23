@@ -30,9 +30,7 @@ import SimpleIcons from "simple-icons";
           })
         );
       } else if (node.nodeName === "title") {
-        children.push(
-          createElement("title", {}, [this.title || node.textContent])
-        );
+        children.push(createElement("title", this.title || node.textContent));
       }
     });
 

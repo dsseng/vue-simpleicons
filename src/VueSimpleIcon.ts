@@ -60,13 +60,13 @@ export default class VueSimpleIcon extends Vue {
   title!: string;
 
   @Prop(Boolean)
-  small!: string;
+  small!: Boolean;
   @Prop(Boolean)
-  medium!: string;
+  medium!: Boolean;
   @Prop(Boolean)
-  large!: string;
+  large!: Boolean;
   @Prop(Boolean)
-  xLarge!: string;
+  xLarge!: Boolean;
   @Prop([String, Number])
   size!: string | number;
 

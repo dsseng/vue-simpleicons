@@ -7,33 +7,34 @@ import SimpleIcons from "simple-icons";
 @Component<VueSimpleIcon>({
   render(createElement: Function): VNode {
     const icon = SimpleIcons[this.name];
-    if (!icon) return renderError(createElement);
+    if (!icon) return renderError("Icon not found", createElement);
 
     const svg = this.parser.parseFromString(icon.svg, "image/svg+xml");
+    if (!svg.firstChild) return renderError("Error in icon", createElement);
+
     let children: VNode[] = [];
-    svg.firstChild &&
-      svg.firstChild.childNodes.forEach(_node => {
-        const node = _node as HTMLElement;
+    svg.firstChild.childNodes.forEach(_node => {
+      const node = _node as HTMLElement;
 
-        if (node.nodeName === "path") {
-          /* istanbul ignore next */
-          const dAttr = node.attributes.getNamedItem("d") || new Attr();
-          const d = dAttr.nodeValue;
+      if (node.nodeName === "path") {
+        /* istanbul ignore next */
+        const dAttr = node.attributes.getNamedItem("d") || new Attr();
+        const d = dAttr.nodeValue;
 
-          children.push(
-            createElement("path", {
-              attrs: {
-                d: d,
-                fill: this.color || "#" + icon.hex
-              }
-            })
-          );
-        } else if (node.nodeName === "title") {
-          children.push(
-            createElement("title", {}, [this.title || node.textContent])
-          );
-        }
-      });
+        children.push(
+          createElement("path", {
+            attrs: {
+              d: d,
+              fill: this.color || "#" + icon.hex
+            }
+          })
+        );
+      } else if (node.nodeName === "title") {
+        children.push(
+          createElement("title", {}, [this.title || node.textContent])
+        );
+      }
+    });
 
     return createElement(
       "svg",
@@ -88,9 +89,9 @@ export default class VueSimpleIcon extends Vue {
   }
 }
 
-const renderError = (h: Function): VNode =>
+const renderError = (title: String, h: Function): VNode =>
   h("svg", {}, [
-    h("title", {}, ["Icon not found!"]),
+    h("title", {}, [title]),
     h("circle", {
       attrs: {
         cx: 12,

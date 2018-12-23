@@ -38,7 +38,8 @@ import SimpleIcons from "simple-icons";
         attrs: {
           width: this.iconSize,
           height: this.iconSize,
-          viewBox: "0 0 24 24"
+          viewBox: "0 0 24 24",
+          xmlns: "http://www.w3.org/2000/svg"
         }
       },
       children

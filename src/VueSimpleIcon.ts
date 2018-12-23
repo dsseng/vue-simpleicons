@@ -22,7 +22,8 @@ import SimpleIcons from "simple-icons";
         fill: this.color || `#${icon.hex}`,
         width: this.iconSize,
         height: this.iconSize,
-        viewBox: "0 0 24 24"
+        viewBox: "0 0 24 24",
+        xmlns: "http://www.w3.org/2000/svg"
       },
       domProps: {
         innerHTML: svgContent
@@ -32,38 +33,39 @@ import SimpleIcons from "simple-icons";
 })
 export default class VueSimpleIcon extends Vue {
   @Prop({
+    type: String,
     validator: name => Object.keys(SimpleIcons).indexOf(name) !== -1
   })
   name!: string;
 
-  @Prop()
+  @Prop(String)
   color!: string;
 
-  @Prop()
+  @Prop(String)
   title!: string;
 
-  @Prop()
-  small!: string;
-  @Prop()
-  medium!: string;
-  @Prop()
-  large!: string;
-  @Prop()
-  xLarge!: string;
-  @Prop()
+  @Prop(Boolean)
+  small!: Boolean;
+  @Prop(Boolean)
+  medium!: Boolean;
+  @Prop(Boolean)
+  large!: Boolean;
+  @Prop(Boolean)
+  xLarge!: Boolean;
+  @Prop([String, Number])
   size!: string | number;
-
-  get iconSize() {
-    if (this.small !== undefined) return 12;
-    if (this.medium !== undefined) return 24;
-    if (this.large !== undefined) return 36;
-    if (this.xLarge !== undefined) return 48;
-    if (this.size !== undefined) return this.size;
-    return 24;
-  }
 
   constructor() {
     super();
+  }
+
+  get iconSize() {
+    if (this.small) return 12;
+    if (this.medium) return 24;
+    if (this.large) return 36;
+    if (this.xLarge) return 48;
+    if (this.size) return this.size;
+    return 24;
   }
 }
 

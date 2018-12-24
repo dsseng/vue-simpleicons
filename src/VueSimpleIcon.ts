@@ -7,7 +7,8 @@ import SimpleIcons from "simple-icons";
 @Component<VueSimpleIcon>({
   render(createElement: Function): VNode {
     const icon = SimpleIcons[this.name];
-    if (!icon) return renderError("Icon not found", this.iconSize, createElement);
+    if (!icon)
+      return renderError("Icon not found", this.iconSize, createElement);
 
     let svgContent = icon.svg.replace(/<\/?svg[^>]*>/, "");
     if (this.title) {

@@ -7,7 +7,7 @@ import SimpleIcons from "simple-icons";
 @Component<VueSimpleIcon>({
   render(h: Function): VNode {
     const icon = SimpleIcons[this.name];
-    if (!icon) return renderError(h);
+    if (!icon) return renderError("Icon not found", this.iconSize, h);
     const svg = this.parser.parseFromString(icon.svg, "image/svg+xml");
     let children: VNode[] = [];
     svg.firstChild &&
@@ -38,7 +38,8 @@ import SimpleIcons from "simple-icons";
         attrs: {
           width: this.iconSize,
           height: this.iconSize,
-          viewBox: "0 0 24 24"
+          viewBox: "0 0 24 24",
+          xmlns: "http://www.w3.org/2000/svg"
         }
       },
       children
@@ -47,33 +48,34 @@ import SimpleIcons from "simple-icons";
 })
 export default class VueSimpleIcon extends Vue {
   @Prop({
+    type: String,
     validator: x => Object.keys(SimpleIcons).indexOf(x) !== -1
   })
   name!: string;
 
-  @Prop()
+  @Prop(String)
   color!: string;
 
-  @Prop()
+  @Prop(String)
   title!: string;
 
-  @Prop()
-  small!: string;
-  @Prop()
-  medium!: string;
-  @Prop()
-  large!: string;
-  @Prop()
-  xLarge!: string;
-  @Prop()
-  size!: string | number;
+  @Prop(Boolean)
+  small!: Boolean;
+  @Prop(Boolean)
+  medium!: Boolean;
+  @Prop(Boolean)
+  large!: Boolean;
+  @Prop(Boolean)
+  xLarge!: Boolean;
+  @Prop([Number])
+  size!: number;
 
   get iconSize() {
-    if (this.small !== undefined) return 12;
-    if (this.medium !== undefined) return 24;
-    if (this.large !== undefined) return 36;
-    if (this.xLarge !== undefined) return 48;
-    if (this.size !== undefined) return this.size;
+    if (this.small) return 12;
+    if (this.medium) return 24;
+    if (this.large) return 36;
+    if (this.xLarge) return 48;
+    if (this.size) return this.size;
     return 24;
   }
 
@@ -85,41 +87,52 @@ export default class VueSimpleIcon extends Vue {
   }
 }
 
-const renderError = (h: Function): VNode =>
-  h("svg", {}, [
-    h("title", {}, ["Icon not found!"]),
-    h("circle", {
+const renderError = (title: string, iconSize: number, h: Function): VNode =>
+  h(
+    "svg",
+    {
       attrs: {
-        cx: 12,
-        cy: 12,
-        r: 12,
-        fill: "red"
+        width: iconSize,
+        height: iconSize,
+        viewBox: "0 0 24 24",
+        xmlns: "http://www.w3.org/2000/svg"
       }
-    }),
-    h("line", {
-      attrs: {
-        x1: 12,
-        y1: 20,
-        x2: 12,
-        y2: 20,
-        stroke: "#fff",
-        fill: "none",
-        "stroke-width": 2,
-        "stroke-linecap": "round",
-        "stroke-miterlimit": 10
-      }
-    }),
-    h("line", {
-      attrs: {
-        x1: 12,
-        y1: 5,
-        x2: 12,
-        y2: 15,
-        stroke: "#fff",
-        fill: "none",
-        "stroke-width": 2,
-        "stroke-linecap": "round",
-        "stroke-miterlimit": 10
-      }
-    })
-  ]);
+    },
+    [
+      h("title", {}, [title]),
+      h("circle", {
+        attrs: {
+          cx: 12,
+          cy: 12,
+          r: 12,
+          fill: "red"
+        }
+      }),
+      h("line", {
+        attrs: {
+          x1: 12,
+          y1: 20,
+          x2: 12,
+          y2: 20,
+          stroke: "#fff",
+          fill: "none",
+          "stroke-width": 2,
+          "stroke-linecap": "round",
+          "stroke-miterlimit": 10
+        }
+      }),
+      h("line", {
+        attrs: {
+          x1: 12,
+          y1: 5,
+          x2: 12,
+          y2: 15,
+          stroke: "#fff",
+          fill: "none",
+          "stroke-width": 2,
+          "stroke-linecap": "round",
+          "stroke-miterlimit": 10
+        }
+      })
+    ]
+  );

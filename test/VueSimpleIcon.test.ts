@@ -143,4 +143,16 @@ describe('VueSimpleIcon', () => {
     
     expect(wrapper.html()).toMatchSnapshot();
   });
+
+  it('should throw an error with invalid color', () => {
+    console.error = jest.fn();
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Travis CI',
+        color: '#badcolor'
+      }
+    });
+    
+    expect(console.error).toHaveBeenCalled();
+  });
 });

@@ -39,7 +39,23 @@ export default class VueSimpleIcon extends Vue {
   })
   name!: string;
 
-  @Prop(String)
+  @Prop({
+    type: String,
+    validator: color => {
+      if (color === "") return false;
+      if (color === "inherit") return false;
+      if (color === "transparent") return false;
+
+      const el = document.createElement("div");
+
+      el.style.color = "rgb(0, 0, 0)";
+      el.style.color = color;
+      if (el.style.color !== "rgb(0, 0, 0)") return true;
+      el.style.color = "rgb(255, 255, 255)";
+      el.style.color = color;
+      return el.style.color !== "rgb(255, 255, 255)";
+    }
+  })
   color!: string;
 
   @Prop(String)
@@ -53,8 +69,8 @@ export default class VueSimpleIcon extends Vue {
   large!: Boolean;
   @Prop(Boolean)
   xLarge!: Boolean;
-  @Prop([Number])
-  size!: number;
+  @Prop([Number, String])
+  size!: number | string;
 
   constructor() {
     super();
@@ -70,7 +86,11 @@ export default class VueSimpleIcon extends Vue {
   }
 }
 
-const renderError = (title: string, iconSize: number, h: Function): VNode =>
+const renderError = (
+  title: string,
+  iconSize: number | string,
+  h: Function
+): VNode =>
   h(
     "svg",
     {

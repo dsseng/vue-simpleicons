@@ -22,7 +22,8 @@ import SimpleIcons from "simple-icons";
         fill: this.color || `#${icon.hex}`,
         width: this.iconSize,
         height: this.iconSize,
-        viewBox: "0 0 24 24"
+        viewBox: "0 0 24 24",
+        xmlns: "http://www.w3.org/2000/svg"
       },
       domProps: {
         innerHTML: svgContent
@@ -44,13 +45,13 @@ export default class VueSimpleIcon extends Vue {
   title!: string;
 
   @Prop(Boolean)
-  small!: string;
+  small!: Boolean;
   @Prop(Boolean)
-  medium!: string;
+  medium!: Boolean;
   @Prop(Boolean)
-  large!: string;
+  large!: Boolean;
   @Prop(Boolean)
-  xLarge!: string;
+  xLarge!: Boolean;
   @Prop([String, Number])
   size!: string | number;
 

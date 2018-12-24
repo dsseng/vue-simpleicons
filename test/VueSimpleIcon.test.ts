@@ -61,7 +61,20 @@ describe('VueSimpleIcon', () => {
         name: 'Invalid name'
       }
     });
-    
+
+    expect(console.error).toHaveBeenCalled();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should use custom size for error if the icon has a custom size', () => {
+    console.error = jest.fn();
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Invalid name',
+        xLarge: true
+      }
+    });
+
     expect(console.error).toHaveBeenCalled();
     expect(wrapper.html()).toMatchSnapshot();
   });

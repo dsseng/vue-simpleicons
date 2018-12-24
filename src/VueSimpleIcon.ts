@@ -83,8 +83,8 @@ export default class VueSimpleIcon extends Vue {
   large!: Boolean;
   @Prop(Boolean)
   xLarge!: Boolean;
-  @Prop([Number])
-  size!: number;
+  @Prop([Number, String])
+  size!: number | string;
 
   get iconSize() {
     if (this.small) return 12;
@@ -103,7 +103,11 @@ export default class VueSimpleIcon extends Vue {
   }
 }
 
-const renderError = (title: string, iconSize: number, h: Function): VNode =>
+const renderError = (
+  title: string,
+  iconSize: number | string,
+  h: Function
+): VNode =>
   h(
     "svg",
     {

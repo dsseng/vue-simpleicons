@@ -7,7 +7,7 @@ import SimpleIcons from "simple-icons";
 @Component<VueSimpleIcon>({
   render(h: Function): VNode {
     const icon = SimpleIcons[this.name];
-    if (!icon) return renderError("Icon not found", h);
+    if (!icon) return renderError("Icon not found", this.iconSize, h);
     const svg = this.parser.parseFromString(icon.svg, "image/svg+xml");
     let children: VNode[] = [];
     svg.firstChild &&
@@ -67,8 +67,8 @@ export default class VueSimpleIcon extends Vue {
   large!: Boolean;
   @Prop(Boolean)
   xLarge!: Boolean;
-  @Prop([String, Number])
-  size!: string | number;
+  @Prop([Number])
+  size!: number;
 
   get iconSize() {
     if (this.small) return 12;
@@ -87,41 +87,52 @@ export default class VueSimpleIcon extends Vue {
   }
 }
 
-const renderError = (title: string, h: Function): VNode =>
-  h("svg", {}, [
-    h("title", {}, [title]),
-    h("circle", {
+const renderError = (title: string, iconSize: number, h: Function): VNode =>
+  h(
+    "svg",
+    {
       attrs: {
-        cx: 12,
-        cy: 12,
-        r: 12,
-        fill: "red"
+        width: iconSize,
+        height: iconSize,
+        viewBox: "0 0 24 24",
+        xmlns: "http://www.w3.org/2000/svg"
       }
-    }),
-    h("line", {
-      attrs: {
-        x1: 12,
-        y1: 20,
-        x2: 12,
-        y2: 20,
-        stroke: "#fff",
-        fill: "none",
-        "stroke-width": 2,
-        "stroke-linecap": "round",
-        "stroke-miterlimit": 10
-      }
-    }),
-    h("line", {
-      attrs: {
-        x1: 12,
-        y1: 5,
-        x2: 12,
-        y2: 15,
-        stroke: "#fff",
-        fill: "none",
-        "stroke-width": 2,
-        "stroke-linecap": "round",
-        "stroke-miterlimit": 10
-      }
-    })
-  ]);
+    },
+    [
+      h("title", {}, [title]),
+      h("circle", {
+        attrs: {
+          cx: 12,
+          cy: 12,
+          r: 12,
+          fill: "red"
+        }
+      }),
+      h("line", {
+        attrs: {
+          x1: 12,
+          y1: 20,
+          x2: 12,
+          y2: 20,
+          stroke: "#fff",
+          fill: "none",
+          "stroke-width": 2,
+          "stroke-linecap": "round",
+          "stroke-miterlimit": 10
+        }
+      }),
+      h("line", {
+        attrs: {
+          x1: 12,
+          y1: 5,
+          x2: 12,
+          y2: 15,
+          stroke: "#fff",
+          fill: "none",
+          "stroke-width": 2,
+          "stroke-linecap": "round",
+          "stroke-miterlimit": 10
+        }
+      })
+    ]
+  );

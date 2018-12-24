@@ -7,7 +7,7 @@ import SimpleIcons from "simple-icons";
 @Component<VueSimpleIcon>({
   render(h: Function): VNode {
     const icon = SimpleIcons[this.name];
-    if (!icon) return renderError(h);
+    if (!icon) return renderError("Icon not found", h);
     const svg = this.parser.parseFromString(icon.svg, "image/svg+xml");
     let children: VNode[] = [];
     svg.firstChild &&
@@ -87,9 +87,9 @@ export default class VueSimpleIcon extends Vue {
   }
 }
 
-const renderError = (h: Function): VNode =>
+const renderError = (title: string, h: Function): VNode =>
   h("svg", {}, [
-    h("title", {}, ["Icon not found!"]),
+    h("title", {}, [title]),
     h("circle", {
       attrs: {
         cx: 12,

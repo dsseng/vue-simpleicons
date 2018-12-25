@@ -4,3 +4,5 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com)
 
 > A Vue.js package for using Simple Icons with Vue.
+
+Read the docs at [our website](https://sh7dm.github.io/vue-simple-icons/)

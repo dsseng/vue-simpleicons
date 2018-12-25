@@ -2,7 +2,7 @@
 import Vue, { VNode } from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import SimpleIcons from "simple-icons";
+import * as SimpleIcons from "simple-icons";
 
 @Component<VueSimpleIcon>({
   render(createElement: Function): VNode {

@@ -23,6 +23,7 @@
     "husky": "^1.2.1",
     "jest": "^23.6.0",
     "prettier": "^1.15.3",
+    "release-it": "^9.3.0",
     "rollup": "^0.68.0",
     "rollup-plugin-typescript2": "^0.18.1",
     "ts-jest": "^23.10.5",
@@ -41,7 +42,8 @@
     "commit": "git-cz",
     "dev": "cd playground && yarn serve",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "release": "release-it"
   },
   "dependencies": {
     "simple-icons": "^1.9.15",

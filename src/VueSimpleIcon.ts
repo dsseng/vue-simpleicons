@@ -43,8 +43,6 @@ export default class VueSimpleIcon extends Vue {
     type: String,
     validator: color => {
       if (color === "") return false;
-      if (color === "inherit") return false;
-      if (color === "transparent") return false;
 
       const el = document.createElement("div");
 

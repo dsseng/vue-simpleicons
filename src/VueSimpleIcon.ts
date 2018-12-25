@@ -5,51 +5,37 @@ import { Prop } from "vue-property-decorator";
 import SimpleIcons from "simple-icons";
 
 @Component<VueSimpleIcon>({
-  render(h: Function): VNode {
+  render(createElement: Function): VNode {
     const icon = SimpleIcons[this.name];
-    if (!icon) return renderError("Icon not found", this.iconSize, h);
-    const svg = this.parser.parseFromString(icon.svg, "image/svg+xml");
-    let children: VNode[] = [];
-    svg.firstChild &&
-      svg.firstChild.childNodes.forEach(node => {
-        const _node = node as HTMLElement;
+    if (!icon)
+      return renderError("Icon not found", this.iconSize, createElement);
 
-        if (_node.nodeName === "path") {
-          /* istanbul ignore next */
-          const dAttr = _node.attributes.getNamedItem("d") || new Attr();
-          const d = dAttr.nodeValue;
+    let svgContent = icon.svg.replace(/<\/?svg[^>]*>/, "");
+    if (this.title) {
+      svgContent = svgContent.replace(
+        /<title>.*<\/title>/,
+        `<title>${this.title}</title>`
+      );
+    }
 
-          children.push(
-            h("path", {
-              attrs: {
-                d: d,
-                fill: this.color || "#" + icon.hex
-              }
-            })
-          );
-        }
-        if (_node.nodeName === "title")
-          children.push(h("title", {}, [this.title || _node.textContent]));
-      });
-
-    return h(
-      "svg",
-      {
-        attrs: {
-          width: this.iconSize,
-          height: this.iconSize,
-          viewBox: "0 0 24 24",
-          xmlns: "http://www.w3.org/2000/svg"
-        }
+    return createElement("svg", {
+      attrs: {
+        fill: this.color || `#${icon.hex}`,
+        width: this.iconSize,
+        height: this.iconSize,
+        viewBox: "0 0 24 24",
+        xmlns: "http://www.w3.org/2000/svg"
       },
-      children
-    );
+      domProps: {
+        innerHTML: svgContent
+      }
+    });
   }
 })
 export default class VueSimpleIcon extends Vue {
   @Prop({
     type: String,
-    validator: x => Object.keys(SimpleIcons).indexOf(x) !== -1
+    validator: name => Object.keys(SimpleIcons).indexOf(name) !== -1
   })
   name!: string;
 
@@ -84,6 +70,10 @@ export default class VueSimpleIcon extends Vue {
   @Prop([Number, String])
   size!: number | string;
 
+  constructor() {
+    super();
+  }
+
   get iconSize() {
     if (this.small) return 12;
     if (this.medium) return 24;
@@ -91,13 +81,6 @@ export default class VueSimpleIcon extends Vue {
     if (this.xLarge) return 48;
     if (this.size) return this.size;
     return 24;
-  }
-
-  parser: DOMParser;
-
-  constructor() {
-    super();
-    this.parser = new DOMParser();
   }
 }
 

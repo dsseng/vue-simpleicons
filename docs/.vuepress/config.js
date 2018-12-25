@@ -4,7 +4,7 @@ module.exports = {
   themeConfig: {
     repo: 'sh7dm/vue-simple-icons',
     docsDir: 'docs',
-    docsBranch: 'vuepress', // TODO: change to `master` before merging
+    docsBranch: 'master',
     editLinks: true,
     locales: {
       '/': {

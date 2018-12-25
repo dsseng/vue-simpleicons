@@ -3,6 +3,4 @@
 [![Travis CI badge](https://img.shields.io/travis/sh7dm/vue-simple-icons.svg?style=for-the-badge)](https://travis-ci.org/sh7dm/vue-simple-icons)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com)
 
-> A Vue.js package for using Simple Icons with Vue.
-
-Read the docs at [our website](https://sh7dm.github.io/vue-simple-icons/)
+> Simple Icons для Vue.

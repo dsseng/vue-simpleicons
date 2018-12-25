@@ -15,6 +15,7 @@
     "@commitlint/config-conventional": "^7.1.2",
     "@types/jest": "^23.3.10",
     "@vue/test-utils": "^1.0.0-beta.27",
+    "@vuepress/plugin-pwa": "^1.0.0-alpha.0",
     "commitizen": "^3.0.5",
     "eslint": "^5.10.0",
     "eslint-config-prettier": "^3.3.0",
@@ -27,7 +28,8 @@
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.2",
     "typescript-eslint-parser": "^21.0.2",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "vuepress": "^0.14.8"
   },
   "scripts": {
     "lint": "eslint . src/*.ts",
@@ -37,7 +39,9 @@
     "test": "yarn lint && yarn unit",
     "prepack": "yarn build",
     "commit": "git-cz",
-    "dev": "cd playground && yarn serve"
+    "dev": "cd playground && yarn serve",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "simple-icons": "^1.9.15",

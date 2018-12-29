@@ -1,4 +1,7 @@
 language: node_js
+env:
+  - TEST_SUITE=unit
+  - TEST_SUITE=lint
 node_js:
   - node
   - lts/*
@@ -7,5 +10,5 @@ install:
   - npm install -g codecov
   - yarn
 script:
-  - yarn test
-  - codecov
+  - yarn $TEST_SUITE
+  - if [ "$TEST_SUITE" == "unit" ]; then codecov; fi

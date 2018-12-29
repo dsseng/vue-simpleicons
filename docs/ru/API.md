@@ -1,12 +1,12 @@
 # API
 ## `VueSimpleIcon`
 **Свойства:**
-| Свойство | Описание         | Значение по умолчанию | Тип               |
-|----------|------------------|-----------------------|-------------------|
-| `name`   | Icon name        | `undefined`           | `string`          |
-| `color`  | Icon color       | Same as `icon.hex`    | `string`          |
-| `small`  | Small icon       | `undefined`           | `Boolean`         |
-| `medium` | Medium icon      | `undefined`           | `Boolean`         |
-| `large`  | Large icon       | `undefined`           | `Boolean`         |
-| `xLarge` | Extra large icon | `undefined`           | `Boolean`         |
-| `size`   | Custom size      | `undefined`           | `string | number` |
+| Свойство | Описание         |  Значение по умолчанию  | Тип               |
+|----------|------------------|-------------------------|-------------------|
+| `name`   | Имя иконки       | `undefined`             | `string`          |
+| `color`  | Цвет иконки      | Такой же, как `icon.hex`| `string`          |
+| `small`  | Маленькая        | `undefined`             | `Boolean`         |
+| `medium` | Средняя          | `undefined`             | `Boolean`         |
+| `large`  | Большая          | `undefined`             | `Boolean`         |
+| `xLarge` | Сверхбольшая     | `undefined`             | `Boolean`         |
+| `size`   | Размер           | `undefined`             | `string | number` |

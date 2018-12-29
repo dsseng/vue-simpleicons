@@ -5,8 +5,8 @@
 |----------|------------------|-------------------------|-------------------|
 | `name`   | Имя иконки       | `undefined`             | `string`          |
 | `color`  | Цвет иконки      | Такой же, как `icon.hex`| `string`          |
-| `small`  | Маленькая        | `undefined`             | `Boolean`         |
-| `medium` | Средняя          | `undefined`             | `Boolean`         |
-| `large`  | Большая          | `undefined`             | `Boolean`         |
-| `xLarge` | Сверхбольшая     | `undefined`             | `Boolean`         |
+| `small`  | Маленькая        | `false`                 | `Boolean`         |
+| `medium` | Средняя          | `true`                  | `Boolean`         |
+| `large`  | Большая          | `false`                 | `Boolean`         |
+| `xLarge` | Сверхбольшая     | `false`                 | `Boolean`         |
 | `size`   | Размер           | `undefined`             | `string | number` |

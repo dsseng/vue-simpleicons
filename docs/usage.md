@@ -35,9 +35,9 @@ You can change `<title>` value using `title` property:
 You can change the icon size to predefined values:
 ```vue
 <template>
-  <vue-simple-icon name="Travis CI" small />
-  <vue-simple-icon name="Travis CI" medium />
-  <vue-simple-icon name="Travis CI" large />
+  <vue-simple-icon name="GitHub" small />
+  <vue-simple-icon name="Vue.js" medium />
+  <vue-simple-icon name="rollup.js" large />
   <vue-simple-icon name="Travis CI" xLarge />
 </template>
 ```
@@ -45,7 +45,7 @@ You can change the icon size to predefined values:
 Or to a custom value:
 ```vue
 <template>
-  <vue-simple-icon name="Travis CI" size="100px" />
+  <vue-simple-icon name="Simple Icons" size="100px" />
 </template>
 ```
 

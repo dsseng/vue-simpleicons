@@ -1,12 +1,19 @@
 # API
+
 ## `VueSimpleIcon`
+
 **Properties:**
-| Property | Description      | Default            | Type              |
-|----------|------------------|--------------------|-------------------|
-| `name`   | Icon name        | `undefined`        | `string`          |
-| `color`  | Icon color       | Same as `icon.hex` | `string`          |
-| `small`  | Small icon       | `false`            | `Boolean`         |
-| `medium` | Medium icon      | `true`             | `Boolean`         |
-| `large`  | Large icon       | `false`            | `Boolean`         |
-| `xLarge` | Extra large icon | `false`            | `Boolean`         |
-| `size`   | Custom size      | `undefined`        | `string | number` |
+
+| Property | Description                                | Default            | Type              |
+|----------|--------------------------------------------|--------------------|-------------------|
+| `name`   | The name of the icon to be used (required) | `undefined`        | `string`          |
+| `color`  | Set the color of the icon                  | Same as `icon.hex` | `string`          |
+| `small`  | Set the size of the icon to small          | `false`            | `Boolean`         |
+| `medium` | Set the size of the icon to medium         | `true`             | `Boolean`         |
+| `large`  | Set the size of the icon to large          | `false`            | `Boolean`         |
+| `xLarge` | Set the size of the icon to extra large    | `false`            | `Boolean`         |
+| `size`   | Set a custom size for the icon (in `px`)   | `undefined`        | `string | number` |
+
+::: tip
+See the properties in use in the [Usage examples](/usage.md)
+:::

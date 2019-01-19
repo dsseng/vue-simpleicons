@@ -12,7 +12,7 @@
 | `medium` | Set the size of the icon to medium         | `true`             | `Boolean`         |
 | `large`  | Set the size of the icon to large          | `false`            | `Boolean`         |
 | `xLarge` | Set the size of the icon to extra large    | `false`            | `Boolean`         |
-| `size`   | Set a custom size for the icon (in `px`)   | `undefined`        | `string | number` |
+| `size`   | Set a custom size for the icon             | `undefined`        | `string | number` |
 
 ::: tip
 See the properties in use in the [Usage examples](/usage.md)

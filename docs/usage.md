@@ -37,9 +37,13 @@ You can change the icon size to predefined values:
 </template>
 ```
 
-Or to a custom value (in `px`):
+Or to a custom value:
 ```vue
 <template>
-  <vue-simple-icon name="Travis CI" size="100" />
+  <vue-simple-icon name="Travis CI" size="100px" />
 </template>
 ```
+
+::: tip
+Any unit for sizes can be used, e.g. `px`, `em`, or `cm`.
+:::

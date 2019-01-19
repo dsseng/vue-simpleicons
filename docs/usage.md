@@ -14,9 +14,14 @@ You can use `color` property to set icon color:
 ```vue
 <template>
   <vue-simple-icon name="GitHub" color="black" />
-  <vue-simple-icon name="Vue.js" color="green" />
+  <vue-simple-icon name="Vue.js" color="#00FF00" />
+  <vue-simple-icon name="rollup.js" color="rgb(255, 0, 0)" />
 </template>
 ```
+
+::: warning
+SVGs do not (officially) support all CSS color units. See [the specification](https://www.w3.org/TR/SVGColor12/#icc-colors) for details.
+:::
 
 ## Custom title
 You can change `<title>` value using `title` property:

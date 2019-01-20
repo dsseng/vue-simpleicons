@@ -11,7 +11,7 @@ import { renderError } from "./util";
     if (!icon)
       return renderError("Icon not found", this.iconSize, createElement);
 
-    let svgContent = icon.svg.replace(/<\/?svg[^>]*>/, "");
+    let svgContent = icon.svg.replace(/<\/?svg[^>]*>/g, "");
     if (this.title) {
       svgContent = svgContent.replace(
         /<title>.*<\/title>/,

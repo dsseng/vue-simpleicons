@@ -1,4 +1,4 @@
-# Contributing to `vue-simple-icons`
+# Contributing to `vue-simpleicons`
 
 ## Submitting an issue
 If you have any problem or idea, please open an issue.

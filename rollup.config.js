@@ -7,12 +7,12 @@ export default {
 
   output: [
     {
-      file: "dist/vue-simple-icons.umd.js",
+      file: "dist/vue-simpleicons.umd.js",
       format: "umd",
       name: "vueSimpleIcons"
     },
     {
-      file: "dist/vue-simple-icons.esm.js",
+      file: "dist/vue-simpleicons.esm.js",
       format: "esm",
       name: "vueSimpleIcons"
     }

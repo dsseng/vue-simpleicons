@@ -14,6 +14,6 @@ git add -A
 git commit -m 'deploy'
 
 # deploy to gh-pages branch
-git push -f https://github.com/sh7dm/vue-simple-icons master:gh-pages
+git push -f https://github.com/sh7dm/vue-simpleicons master:gh-pages
 
 cd -

@@ -3747,10 +3747,10 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-3.3.0.tgz#41afc8d3b852e757f06274ed6c44ca16f939a57d"
-  integrity sha512-Bc3bh5bAcKNvs3HOpSi6EfGA2IIp7EzWcg2tS4vP7stnXu/J1opihHDM7jI9JCIckyIDTgZLSWn7J3HY0j2JfA==
+eslint-config-prettier@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-4.1.0.tgz#181364895899fff9fd3605fecb5c4f20e7d5f395"
+  integrity sha512-zILwX9/Ocz4SV2vX7ox85AsrAgXV3f2o2gpIicdMIOra48WYqgUnWNH/cR/iHtmD2Vb3dLSC3LiEJnS05Gkw7w==
   dependencies:
     get-stdin "^6.0.0"
 
@@ -9015,10 +9015,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
 
-simple-icons@^1.9.15:
-  version "1.9.16"
-  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-1.9.16.tgz#066ff30de30b006c6574d7f262b51fc9d2d42c9f"
-  integrity sha512-pH971wm0KsDV9Teg/yT0JTTQUsHcpWRawB1Gi5WQ2GtUm5CHlODVDmhML2KWXssZwcRv1R/KHxS5p4PNfnwrkQ==
+simple-icons@^1.9.20:
+  version "1.9.21"
+  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-1.9.21.tgz#72baf2c713af0c36d36b22bee590837a035bfbb5"
+  integrity sha512-Fbpd8FqpYj4+VNqPBfmxFSjNUAGRzqgQI0B1t/Dom3/DutOKInRNlIShTe8BDsPmPhrncRlHF5vBJlSktmsjEA==
 
 sisteransi@^0.1.1:
   version "0.1.1"

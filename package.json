@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "simple-icons": "^1.9.20",
-    "vue": "^2.5.21",
+    "vue": "^2.6.9",
     "vue-class-component": "^7.0.0",
     "vue-property-decorator": "^8.0.0"
   },

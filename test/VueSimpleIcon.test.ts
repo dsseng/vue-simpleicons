@@ -155,4 +155,92 @@ describe('VueSimpleIcon', () => {
 
     expect(console.error).toHaveBeenCalled();
   });
+
+  it('should work with size in em', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Simple Icons',
+        size: "10em"
+      }
+    });
+
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should work with size in rem', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Simple Icons',
+        size: "10rem"
+      }
+    });
+
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should work with size in vw', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Simple Icons',
+        size: "1vw"
+      }
+    });
+
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should work with size in %', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Simple Icons',
+        size: "5%"
+      }
+    });
+
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should work with color in rgb()', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Simple Icons',
+        color: 'rgb(123, 123, 123)'
+      }
+    });
+
+    expect(wrapper.find('svg').attributes('fill')).toBe('rgb(123, 123, 123)');
+  });
+
+  it('should work with color in rgba()', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Simple Icons',
+        color: 'rgba(123, 123, 123, 0.5)'
+      }
+    });
+
+    expect(wrapper.find('svg').attributes('fill')).toBe('rgba(123, 123, 123, 0.5)');
+  });
+
+  it('should work with color in hsl()', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Simple Icons',
+        color: 'hsl(90, 100, 65)'
+      }
+    });
+
+    expect(wrapper.find('svg').attributes('fill')).toBe('hsl(90, 100, 65)');
+  });
+
+  it('should work with color in hsla()', () => {
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Simple Icons',
+        color: 'hsla(90, 100, 65, 0.6)'
+      }
+    });
+
+    expect(wrapper.find('svg').attributes('fill')).toBe('hsla(90, 100, 65, 0.6)');
+  });
 });

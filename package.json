@@ -43,9 +43,11 @@
     "dev": "cd playground && yarn serve",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "release": "release-it"
+    "release": "release-it",
+    "clean": "rimraf .rpt2_cache coverage *.log *.tgz"
   },
   "dependencies": {
+    "rimraf": "^2.6.3",
     "simple-icons": "^1.9.20",
     "vue": "^2.6.9",
     "vue-class-component": "^7.0.0",

@@ -156,6 +156,18 @@ describe('VueSimpleIcon', () => {
     expect(console.error).toHaveBeenCalled();
   });
 
+  it('should throw an error with empty color', () => {
+    console.error = jest.fn();
+    const wrapper = shallowMount(VueSimpleIcon, {
+      propsData: {
+        name: 'Simple Icons',
+        color: ''
+      }
+    });
+
+    expect(console.error).toHaveBeenCalled();
+  });
+
   it('should work with size in em', () => {
     const wrapper = shallowMount(VueSimpleIcon, {
       propsData: {

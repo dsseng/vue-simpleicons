@@ -29,7 +29,7 @@
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.2",
     "typescript-eslint-parser": "^21.0.2",
-    "vue-template-compiler": "^2.5.21",
+    "vue-template-compiler": "^2.6.9",
     "vuepress": "^0.14.8"
   },
   "scripts": {
@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "simple-icons": "^1.9.20",
-    "vue": "^2.5.21",
+    "vue": "^2.6.9",
     "vue-class-component": "^7.0.0",
     "vue-property-decorator": "^8.0.0"
   },

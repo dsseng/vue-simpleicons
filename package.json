@@ -13,7 +13,7 @@
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
-    "@types/jest": "^24.0.0",
+    "@types/jest": "^24.0.10",
     "@vue/test-utils": "^1.0.0-beta.27",
     "@vuepress/plugin-pwa": "^1.0.0-alpha.0",
     "commitizen": "^3.0.5",
@@ -23,13 +23,13 @@
     "husky": "^1.2.1",
     "jest": "^23.6.0",
     "prettier": "^1.15.3",
-    "release-it": "^10.0.0",
-    "rollup": "^1.0.0",
-    "rollup-plugin-typescript2": "^0.19.0",
+    "release-it": "^10.3.1",
+    "rollup": "^1.6.0",
+    "rollup-plugin-typescript2": "^0.20.0",
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.2",
     "typescript-eslint-parser": "^21.0.2",
-    "vue-template-compiler": "^2.5.21",
+    "vue-template-compiler": "^2.6.9",
     "vuepress": "^0.14.8"
   },
   "scripts": {
@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "simple-icons": "^1.9.20",
-    "vue": "^2.5.21",
+    "vue": "^2.6.9",
     "vue-class-component": "^7.0.0",
     "vue-property-decorator": "^8.0.0"
   },

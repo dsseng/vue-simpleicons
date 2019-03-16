@@ -1,8 +1,8 @@
 module.exports = {
   plugins: ['@vuepress/pwa'],
-  base: '/vue-simple-icons/',
+  base: '/vue-simpleicons/',
   themeConfig: {
-    repo: 'sh7dm/vue-simple-icons',
+    repo: 'sh7dm/vue-simpleicons',
     docsDir: 'docs',
     docsBranch: 'master',
     editLinks: true,
@@ -46,12 +46,12 @@ module.exports = {
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'vue-simple-icons',
+      title: 'vue-simpleicons',
       description: 'Simple Icons for Vue.js'
     },
     '/ru/': {
       lang: 'ru-RU',
-      title: 'vue-simple-icons',
+      title: 'vue-simpleicons',
       description: 'Simple Icons for Vue.js'
     }
   }

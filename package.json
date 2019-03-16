@@ -1,15 +1,15 @@
 {
-  "name": "vue-simple-icons",
+  "name": "vue-simpleicons",
   "version": "0.1.0",
   "description": "simple-icons integration for Vue.js",
-  "repository": "https://github.com/sh7dm/vue-simple-icons",
+  "repository": "https://github.com/sh7dm/vue-simpleicons",
   "author": "sh7dm <d3dx12.xx@gmail.com>",
   "license": "MIT",
   "private": false,
-  "main": "dist/vue-simple-icons.umd.js",
-  "browser": "dist/vue-simple-icons.umd.js",
-  "module": "dist/vue-simple-icons.esm.js",
-  "es2015": "dist/vue-simple-icons.esm.js",
+  "main": "dist/vue-simpleicons.umd.js",
+  "browser": "dist/vue-simpleicons.umd.js",
+  "module": "dist/vue-simpleicons.esm.js",
+  "es2015": "dist/vue-simpleicons.esm.js",
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
@@ -18,14 +18,14 @@
     "@vuepress/plugin-pwa": "^1.0.0-alpha.0",
     "commitizen": "^3.0.5",
     "eslint": "^5.10.0",
-    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.0.0",
     "husky": "^1.2.1",
     "jest": "^23.6.0",
     "prettier": "^1.15.3",
     "release-it": "^10.0.0",
     "rollup": "^1.0.0",
-    "rollup-plugin-typescript2": "^0.19.0",
+    "rollup-plugin-typescript2": "^0.20.0",
     "ts-jest": "^24.0.0",
     "typescript": "^3.2.2",
     "typescript-eslint-parser": "^21.0.2",
@@ -46,10 +46,10 @@
     "release": "release-it"
   },
   "dependencies": {
-    "simple-icons": "^1.9.15",
+    "simple-icons": "^1.9.20",
     "vue": "^2.5.21",
-    "vue-class-component": "^6.3.2",
-    "vue-property-decorator": "^7.2.0"
+    "vue-class-component": "^7.0.0",
+    "vue-property-decorator": "^8.0.0"
   },
   "release-it": {
     "git": {

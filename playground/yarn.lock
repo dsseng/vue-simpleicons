@@ -699,7 +699,7 @@
   dependencies:
     chalk "^1.1.3"
     error-stack-parser "^2.0.0"
-    string-width "^2.0.0"
+    string-width "^2.0.0
 
 "@types/events@*":
   version "3.0.0"
@@ -791,17 +791,19 @@
     "@vue/babel-preset-app" "^3.2.0"
     babel-loader "^8.0.4"
 
-"@vue/cli-plugin-eslint@^3.2.0":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-3.2.1.tgz#4dc353add93023363bf4c6b347e64472d1f2f432"
-  integrity sha512-Z/eQw18FjTypMMryNg8WCYJxEBmSAtnzukRWWNFwqNnh2zM/2J6yR4dYhsyjNtMEMUOnQsAsJnqgw45rLu8sJg==
+"@vue/cli-plugin-eslint@^3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-3.5.0.tgz#c5529ace3925766ffb45d99f0fddcc019b0181b5"
+  integrity sha512-tt5vjx3gT4KjIcwwsNK1FrvJHw6DkK8PA81oGBH7ARgf6HHXB80ruufwmddEhpn5MNKCsbvLkkUnVPs6t9WRUw==
   dependencies:
-    "@vue/cli-shared-utils" "^3.2.0"
+    "@vue/cli-shared-utils" "^3.5.0"
     babel-eslint "^10.0.1"
+    eslint-loader "^2.1.2"
+    globby "^9.0.0"
+    webpack ">=4 < 4.29"
+  optionalDependencies:
     eslint "^4.19.1"
-    eslint-loader "^2.1.1"
     eslint-plugin-vue "^4.7.1"
-    globby "^8.0.1"
 
 "@vue/cli-plugin-typescript@^3.2.0":
   version "3.2.0"
@@ -914,6 +916,7 @@
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@vue/component-compiler-utils/-/component-compiler-utils-2.6.0.tgz#aa46d2a6f7647440b0b8932434d22f12371e543b"
   integrity sha512-IHjxt7LsOFYc0DkTncB7OXJL7UzwOLPPQCfEUNyxL2qt+tF12THV+EO33O1G2Uk4feMSWua3iD39Itszx0f0bw==
+
   dependencies:
     consolidate "^0.15.1"
     hash-sum "^1.0.2"
@@ -3142,10 +3145,10 @@ eslint-config-prettier@^3.3.0:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-loader@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-loader/-/eslint-loader-2.1.1.tgz#2a9251523652430bfdd643efdb0afc1a2a89546a"
-  integrity sha512-1GrJFfSevQdYpoDzx8mEE2TDWsb/zmFuY09l6hURg1AeFIKQOvZ+vH0UPjzmd1CZIbfTV5HUkMeBmFiDBkgIsQ==
+eslint-loader@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/eslint-loader/-/eslint-loader-2.1.2.tgz#453542a1230d6ffac90e4e7cb9cadba9d851be68"
+  integrity sha512-rA9XiXEOilLYPOIInvVH5S/hYfyTPyxag6DZhoQOduM+3TkghAEQ3VcFO8VnX4J4qg/UIBzp72aOf/xvYmpmsg==
   dependencies:
     loader-fs-cache "^1.0.0"
     loader-utils "^1.0.2"
@@ -6069,6 +6072,18 @@ ora@^2.1.0:
     cli-spinners "^1.1.0"
     log-symbols "^2.2.0"
     strip-ansi "^4.0.0"
+    wcwidth "^1.0.1"
+
+ora@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/ora/-/ora-3.2.0.tgz#67e98a7e11f7f0ac95deaaaf11bb04de3d09e481"
+  integrity sha512-XHMZA5WieCbtg+tu0uPF8CjvwQdNzKCX6BVh3N6GFsEXH40mTk5dsw/ya1lBTUGJslcEFJFQ8cBhOgkkZXQtMA==
+  dependencies:
+    chalk "^2.4.2"
+    cli-cursor "^2.1.0"
+    cli-spinners "^2.0.0"
+    log-symbols "^2.2.0"
+    strip-ansi "^5.0.0"
     wcwidth "^1.0.1"
 
 ora@^3.1.0:

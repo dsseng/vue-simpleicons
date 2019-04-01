@@ -35,7 +35,7 @@
   "scripts": {
     "lint": "eslint . src/*.ts",
     "unit": "jest",
-    "fix": "eslint . src/*.ts --fix",
+    "lint:fix": "eslint . src/*.ts --fix",
     "build": "rollup -c",
     "test": "yarn lint && yarn unit",
     "prepack": "yarn build",

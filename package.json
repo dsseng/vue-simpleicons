@@ -25,7 +25,7 @@
     "prettier": "^1.15.3",
     "release-it": "^10.3.1",
     "rollup": "^1.6.0",
-    "rollup-plugin-typescript2": "^0.20.0",
+    "rollup-plugin-typescript2": "^0.21.0",
     "ts-jest": "^24.0.0",
     "typescript": "^3.3.4000",
     "typescript-eslint-parser": "^21.0.2",

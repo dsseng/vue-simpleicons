@@ -12,16 +12,6 @@ describe('VueSimpleIcon', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('should render icon with multiple paths', () => {
-    const wrapper = shallowMount(VueSimpleIcon, {
-      propsData: {
-        name: 'Simple Icons'
-      }
-    });
-
-    expect(wrapper.html()).toMatchSnapshot();
-  });
-
   it('should include title', () => {
     const wrapper = shallowMount(VueSimpleIcon, {
       propsData: {

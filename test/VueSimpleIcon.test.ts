@@ -78,7 +78,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatch(/<svg[^>]*width="12" height="12"[^>]*>.*/);
+    expect(wrapper.html()).toMatch(svgSizePattern('12'));
   });
 
   it('should render medium icon', () => {
@@ -89,7 +89,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatch(/<svg[^>]*width="24" height="24"[^>]*>.*/);
+    expect(wrapper.html()).toMatch(svgSizePattern('24'));
   });
 
   it('should render large icon', () => {
@@ -100,7 +100,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatch(/<svg[^>]*width="36" height="36"[^>]*>.*/);
+    expect(wrapper.html()).toMatch(svgSizePattern('36'));
   });
 
   it('should render xLarge icon', () => {
@@ -111,7 +111,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatch(/<svg[^>]*width="48" height="48"[^>]*>.*/);
+    expect(wrapper.html()).toMatch(svgSizePattern('48'));
   });
 
   it('should render custom size icon', () => {
@@ -122,7 +122,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatch(/<svg[^>]*width="100" height="100"[^>]*>.*/);
+    expect(wrapper.html()).toMatch(svgSizePattern('100'));
   });
 
   it('should render medium icon by default', () => {
@@ -132,7 +132,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatch(/<svg[^>]*width="24" height="24"[^>]*>.*/);
+    expect(wrapper.html()).toMatch(svgSizePattern('24'));
   });
 
   it('should throw an error with invalid color', () => {
@@ -160,47 +160,51 @@ describe('VueSimpleIcon', () => {
   });
 
   it('should work with size in em', () => {
+    const size = '10em';
     const wrapper = shallowMount(VueSimpleIcon, {
       propsData: {
         name: 'Simple Icons',
-        size: "10em"
+        size: size
       }
     });
 
-    expect(wrapper.html()).toMatch(/<svg[^>]*width="10em" height="10em"[^>]*>.*/);
+    expect(wrapper.html()).toMatch(svgSizePattern(size));
   });
 
   it('should work with size in rem', () => {
+    const size = '10rem';
     const wrapper = shallowMount(VueSimpleIcon, {
       propsData: {
         name: 'Simple Icons',
-        size: "10rem"
+        size: size
       }
     });
 
-    expect(wrapper.html()).toMatch(/<svg[^>]*width="10rem" height="10rem"[^>]*>.*/);
+    expect(wrapper.html()).toMatch(svgSizePattern(size));
   });
 
   it('should work with size in vw', () => {
+    const size = '1vw';
     const wrapper = shallowMount(VueSimpleIcon, {
       propsData: {
         name: 'Simple Icons',
-        size: "1vw"
+        size: size
       }
     });
 
-    expect(wrapper.html()).toMatch(/<svg[^>]*width="1vw" height="1vw"[^>]*>.*/);
+        expect(wrapper.html()).toMatch(svgSizePattern(size));
   });
 
   it('should work with size in %', () => {
+    const size = '5%';
     const wrapper = shallowMount(VueSimpleIcon, {
       propsData: {
         name: 'Simple Icons',
-        size: "5%"
+        size: size
       }
     });
 
-    expect(wrapper.html()).toMatch(/<svg[^>]*width="5%" height="5%"[^>]*>.*/);
+    expect(wrapper.html()).toMatch(size);
   });
 
   it('should work with color in rgb()', () => {
@@ -247,3 +251,7 @@ describe('VueSimpleIcon', () => {
     expect(wrapper.find('svg').attributes('fill')).toBe('hsla(90, 100, 65, 0.6)');
   });
 });
+
+function svgSizePattern(dimension: String): RegExp {
+  return new RegExp(`<svg[^>]*width="${dimension}" height="${dimension}"[^>]*>.*`);
+}

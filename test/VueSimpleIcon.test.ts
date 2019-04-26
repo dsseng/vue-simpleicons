@@ -9,17 +9,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
-  });
-
-  it('should render icon with multiple paths', () => {
-    const wrapper = shallowMount(VueSimpleIcon, {
-      propsData: {
-        name: 'Simple Icons'
-      }
-    });
-
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.html()).toMatch(/<svg [^>]+><title>[^<]+<\/title><path d="[^"]+"><\/path><\/svg>/);
   });
 
   it('should include title', () => {
@@ -44,14 +34,15 @@ describe('VueSimpleIcon', () => {
   });
 
   it('should render icon with custom title', () => {
+    const customTitle = 'Free SVG icons for popular brands';
     const wrapper = shallowMount(VueSimpleIcon, {
       propsData: {
         name: 'Simple Icons',
-        title: 'Free SVG icons for popular brands'
+        title: customTitle
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.find('title').text()).toBe(customTitle);
   });
 
   it('should render error if name is invalid', () => {
@@ -87,7 +78,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.html()).toMatch(svgSizePattern('12'));
   });
 
   it('should render medium icon', () => {
@@ -98,7 +89,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.html()).toMatch(svgSizePattern('24'));
   });
 
   it('should render large icon', () => {
@@ -109,7 +100,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.html()).toMatch(svgSizePattern('36'));
   });
 
   it('should render xLarge icon', () => {
@@ -120,7 +111,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.html()).toMatch(svgSizePattern('48'));
   });
 
   it('should render custom size icon', () => {
@@ -131,7 +122,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.html()).toMatch(svgSizePattern('100'));
   });
 
   it('should render medium icon by default', () => {
@@ -141,7 +132,7 @@ describe('VueSimpleIcon', () => {
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.html()).toMatch(svgSizePattern('24'));
   });
 
   it('should throw an error with invalid color', () => {
@@ -169,47 +160,51 @@ describe('VueSimpleIcon', () => {
   });
 
   it('should work with size in em', () => {
+    const size = '10em';
     const wrapper = shallowMount(VueSimpleIcon, {
       propsData: {
         name: 'Simple Icons',
-        size: "10em"
+        size: size
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.html()).toMatch(svgSizePattern(size));
   });
 
   it('should work with size in rem', () => {
+    const size = '10rem';
     const wrapper = shallowMount(VueSimpleIcon, {
       propsData: {
         name: 'Simple Icons',
-        size: "10rem"
+        size: size
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.html()).toMatch(svgSizePattern(size));
   });
 
   it('should work with size in vw', () => {
+    const size = '1vw';
     const wrapper = shallowMount(VueSimpleIcon, {
       propsData: {
         name: 'Simple Icons',
-        size: "1vw"
+        size: size
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+        expect(wrapper.html()).toMatch(svgSizePattern(size));
   });
 
   it('should work with size in %', () => {
+    const size = '5%';
     const wrapper = shallowMount(VueSimpleIcon, {
       propsData: {
         name: 'Simple Icons',
-        size: "5%"
+        size: size
       }
     });
 
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper.html()).toMatch(size);
   });
 
   it('should work with color in rgb()', () => {
@@ -256,3 +251,7 @@ describe('VueSimpleIcon', () => {
     expect(wrapper.find('svg').attributes('fill')).toBe('hsla(90, 100, 65, 0.6)');
   });
 });
+
+function svgSizePattern(dimension: String): RegExp {
+  return new RegExp(`<svg[^>]*width="${dimension}" height="${dimension}"[^>]*>.*`);
+}

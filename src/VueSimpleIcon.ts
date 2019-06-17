@@ -11,13 +11,7 @@ import { renderError } from "./util";
     if (!icon)
       return renderError("Icon not found", this.iconSize, createElement);
 
-    let svgContent = icon.svg.replace(/<\/?svg[^>]*>/g, "");
-    if (this.title) {
-      svgContent = svgContent.replace(
-        /<title>.*<\/title>/,
-        `<title>${this.title}</title>`
-      );
-    }
+    const title = this.title ? this.title : `${icon.title} icon`;
 
     return createElement("svg", {
       attrs: {
@@ -26,11 +20,15 @@ import { renderError } from "./util";
         height: this.iconSize,
         viewBox: "0 0 24 24",
         xmlns: "http://www.w3.org/2000/svg"
-      },
-      domProps: {
-        innerHTML: svgContent
       }
-    });
+    }, [
+      createElement('title', title),
+      createElement('path', {
+        attrs: {
+          d: icon.path
+        }
+      })
+    ]);
   }
 })
 export default class VueSimpleIcon extends Vue {

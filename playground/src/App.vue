@@ -13,7 +13,7 @@
     <vue-simple-icon name="Travis CI" medium />
     <vue-simple-icon name="Travis CI" large />
     <vue-simple-icon name="Travis CI" xLarge />
-    <vue-simple-icon name="Travis CI" size=64 />
+    <vue-simple-icon name="Travis CI" size="64" />
     <vue-simple-icon name="Travis CI" size="100" />
 
     <vue-simple-icon name="Travis CI" color="#badcolor" />

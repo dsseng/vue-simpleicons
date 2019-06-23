@@ -46,7 +46,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "release": "release-it",
-    "clean": "rimraf .rpt2_cache coverage *.log *.tgz"
+    "clean": "rimraf .rpt2_cache coverage dist *.log *.tgz"
   },
   "dependencies": {
     "simple-icons": "^1.9.28",

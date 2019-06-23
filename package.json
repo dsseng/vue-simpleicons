@@ -52,7 +52,7 @@
     "simple-icons": "^1.9.28",
     "vue": "^2.6.9",
     "vue-class-component": "^7.0.0",
-    "vue-property-decorator": "^8.0.0"
+    "vue-property-decorator": "^8.2.1"
   },
   "release-it": {
     "git": {

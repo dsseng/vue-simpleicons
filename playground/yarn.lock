@@ -944,7 +944,7 @@
     tslint "^5.15.0"
     webpack ">=4 < 4.29"
 
-"@vue/cli-service@^3.5.0":
+"@vue/cli-service@^3.8.4":
   version "3.8.4"
   resolved "https://registry.yarnpkg.com/@vue/cli-service/-/cli-service-3.8.4.tgz#fecf63c8e0a838e2468d2a79059e39f2cbb1fdc5"
   integrity sha512-OWKTPZN+Wk3gpd8ar6DsQWlpIFPCIULZuVsHarJXjlXpIx3FOleXzaT2QiDB+tprbTRZMfsMMZMt5b0nvacY9Q==

@@ -24,7 +24,7 @@
     "husky": "^2.1.0",
     "jest": "^24.5.0",
     "prettier": "^1.15.3",
-    "release-it": "^11.0.0",
+    "release-it": "^12.3.0",
     "rimraf": "^2.6.3",
     "rollup": "^1.15.6",
     "rollup-plugin-typescript2": "^0.21.2",
@@ -52,7 +52,7 @@
     "simple-icons": "^1.9.28",
     "vue": "^2.6.9",
     "vue-class-component": "^7.0.0",
-    "vue-property-decorator": "^8.0.0"
+    "vue-property-decorator": "^8.2.1"
   },
   "release-it": {
     "git": {

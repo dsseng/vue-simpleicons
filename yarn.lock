@@ -837,6 +837,11 @@
   dependencies:
     "@hapi/hoek" "6.x.x"
 
+"@iarna/toml@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.3.tgz#f060bf6eaafae4d56a7dac618980838b0696e2ab"
+  integrity sha512-FmuxfCuolpLl0AnQ2NHSzoUKWEJDFl63qXjzdoWBVyFCXzMGm1spBzk7LeHNoVCiWCF7mRVms9e6jEV9+MoPbg==
+
 "@jest/console@^24.7.1":
   version "24.7.1"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.7.1.tgz#32a9e42535a97aedfe037e725bd67e954b459545"
@@ -2947,6 +2952,16 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
+cosmiconfig@5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-5.2.0.tgz#45038e4d28a7fe787203aede9c25bca4a08b12c8"
+  integrity sha512-nxt+Nfc3JAqf4WIWd0jXLjTJZmsPLrA9DDc4nRw2KFJQJK7DNooqSXrNI7tzLG50CF8axczly5UV929tBmh/7g==
+  dependencies:
+    import-fresh "^2.0.0"
+    is-directory "^0.3.1"
+    js-yaml "^3.13.0"
+    parse-json "^4.0.0"
+
 cosmiconfig@^5.0.0, cosmiconfig@^5.2.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-5.2.1.tgz#040f726809c591e77a17c0a3626ca45b4f168b1a"
@@ -3439,10 +3454,10 @@ depd@~1.1.2:
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
 
-deprecated-obj@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/deprecated-obj/-/deprecated-obj-1.0.0.tgz#01f60ae7a344a385cb16223eaf3b1a42b04c3a2f"
-  integrity sha512-CkoAaiIjJnT0YmOoFwBo2qKQ5XMXo6+QYcvskzT6v0o5+kAmdQvfKbqxcHxcR2zQpi7dRD4CpOzppp9ivvRbEg==
+deprecated-obj@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/deprecated-obj/-/deprecated-obj-1.0.1.tgz#d7051278d2c141dc672ac3410d06642e990003b7"
+  integrity sha512-igs766xNtF7Fv/R//gT644e6dr+bT6kJrg+qyJA9affCyvf70UUNKIUIMUSROBg1sPUrBnENPsDdDHcBLI5wFQ==
   dependencies:
     flat "^4.1.0"
     lodash "^4.17.11"
@@ -8469,16 +8484,18 @@ relateurl@0.2.x:
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
 
-release-it@^11.0.0:
-  version "11.0.4"
-  resolved "https://registry.yarnpkg.com/release-it/-/release-it-11.0.4.tgz#c2575ac1d6fac83357c755484afbe490b816f94d"
-  integrity sha512-wrERAH4SQO2JH8XioJX1Hl/U4bA69SiBb1BOXR4z7DMUlXxNIpmt+B7oN+izmQNFj3Avrs4+YklAfdNZ5RlOTA==
+release-it@^12.3.0:
+  version "12.3.0"
+  resolved "https://registry.yarnpkg.com/release-it/-/release-it-12.3.0.tgz#2ac7c0d37d7773dcaacb4b29cde64c487862a512"
+  integrity sha512-mMEbdhyUDyX05viUl1pKcDLpNOxpgiig6OfvJXleNJqYKjIvNtYVkBxLHXH//kmT2NYnAkx8NvN8IZJQRei8zQ==
   dependencies:
+    "@iarna/toml" "2.2.3"
     "@octokit/rest" "16.25.0"
     async-retry "1.2.3"
     chalk "2.4.2"
+    cosmiconfig "5.2.0"
     debug "4.1.1"
-    deprecated-obj "1.0.0"
+    deprecated-obj "1.0.1"
     detect-repo-changelog "1.0.1"
     find-up "3.0.0"
     form-data "2.3.3"
@@ -10148,7 +10165,7 @@ vue-loader@^15.2.4:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-property-decorator@^8.0.0:
+vue-property-decorator@^8.2.1:
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-8.2.1.tgz#3791662033b20d20d098cb20e86fd23842982508"
   integrity sha512-zgtcvzGB2JpDqnIxVhTK+6m+dv3uyhYs+tL8elL+DWiXj9kDonKcPY7f1DHYX1NlnWPCj7ht0nL/i8+S1gg76Q==

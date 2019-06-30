@@ -13,22 +13,26 @@ import { renderError } from "./util";
 
     const title = this.title ? this.title : `${icon.title} icon`;
 
-    return createElement("svg", {
-      attrs: {
-        fill: this.color || `#${icon.hex}`,
-        width: this.iconSize,
-        height: this.iconSize,
-        viewBox: "0 0 24 24",
-        xmlns: "http://www.w3.org/2000/svg"
-      }
-    }, [
-      createElement('title', title),
-      createElement('path', {
+    return createElement(
+      "svg",
+      {
         attrs: {
-          d: icon.path
+          fill: this.color || `#${icon.hex}`,
+          width: this.iconSize,
+          height: this.iconSize,
+          viewBox: "0 0 24 24",
+          xmlns: "http://www.w3.org/2000/svg"
         }
-      })
-    ]);
+      },
+      [
+        createElement("title", title),
+        createElement("path", {
+          attrs: {
+            d: icon.path
+          }
+        })
+      ]
+    );
   }
 })
 export default class VueSimpleIcon extends Vue {

@@ -1,14 +1,26 @@
-language: node_js
-env:
-  - TEST_SUITE=unit
-  - TEST_SUITE=lint
-node_js:
-  - node
-  - lts/*
-  - v8
-install:
-  - npm install -g codecov
-  - yarn
-script:
-  - yarn $TEST_SUITE
-  - if [ "$TEST_SUITE" == "unit" ]; then codecov; fi
+jobs:
+  include:
+    - stage: "Test"
+      name: "Unit"
+      language: node_js
+      node_js:
+        - node
+        - lts/*
+        - v8
+      script:
+        - yarn unit
+      after_script:
+        codecov
+    - name: "Lint"
+      language: node_js
+      node_js:
+        - node
+        - lts/*
+        - v8
+      script:
+        - yarn lint
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change

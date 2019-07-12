@@ -19,6 +19,14 @@ jobs:
         - v8
       script:
         - yarn lint
+    - name: "Build"
+      language: node_js
+      node_js:
+        - node
+        - lts/*
+        - v8
+      script:
+        - yarn build
 
 notifications:
   email:

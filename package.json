@@ -59,5 +59,8 @@
       "commitMessage": "chore: release ${version}",
       "tagAnnotation": "Release ${version} :gift:"
     }
+  },
+  "greenkeeper": {
+    "label": "dependencies"
   }
 }

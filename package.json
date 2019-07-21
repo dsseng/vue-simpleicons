@@ -27,6 +27,7 @@
     "release-it": "^12.3.0",
     "rimraf": "^2.6.3",
     "rollup": "^1.15.6",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript2": "^0.21.2",
     "ts-jest": "^24.0.0",
     "typescript": "^3.3.4000",
@@ -49,7 +50,6 @@
     "clean": "rimraf .rpt2_cache coverage dist *.log *.tgz"
   },
   "dependencies": {
-    "rollup-plugin-node-resolve": "^5.2.0",
     "simple-icons": "^1.10.0",
     "vue": "^2.6.9",
     "vue-class-component": "^7.0.0",

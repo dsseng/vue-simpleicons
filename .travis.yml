@@ -9,7 +9,7 @@ jobs:
     - stage: "Test"
       name: "Unit (v8)"
       language: node_js
-      node_js: - v8
+      node_js: v8
       script:
         - yarn unit
     - stage: "Test"

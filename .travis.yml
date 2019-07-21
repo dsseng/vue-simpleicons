@@ -1,11 +1,19 @@
-node_js:
-  - node
-  - lts/*
-  - v8
 jobs:
   include:
     - stage: "Test"
-      name: "Unit"
+      name: "Unit (lts)"
+      language: node_js
+      node_js: lts/*
+      script:
+        - yarn unit
+    - stage: "Test"
+      name: "Unit (v8)"
+      language: node_js
+      node_js: - v8
+      script:
+        - yarn unit
+    - stage: "Test"
+      name: "Unit (node)"
       language: node_js
       node_js: node
       script:

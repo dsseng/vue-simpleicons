@@ -1,32 +1,28 @@
+language: node_js
 jobs:
   include:
     - stage: "Test"
       name: "Unit (lts)"
-      language: node_js
       node_js: lts/*
       script:
         - yarn unit
     - stage: "Test"
       name: "Unit (v8)"
-      language: node_js
       node_js: v8
       script:
         - yarn unit
     - stage: "Test"
       name: "Unit (node)"
-      language: node_js
       node_js: node
       script:
         - yarn unit
       after_script:
         codecov
     - name: "Lint"
-      language: node_js
       node_js: node
       script:
         - yarn lint
     - name: "Build"
-      language: node_js
       node_js: node
       script:
         - yarn build

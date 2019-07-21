@@ -18,7 +18,7 @@
     "@vue/test-utils": "^1.0.0-beta.27",
     "@vuepress/plugin-pwa": "^1.0.0-alpha.0",
     "commitizen": "^3.0.5",
-    "eslint": "^5.10.0",
+    "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.0.0",
     "husky": "^3.0.0",

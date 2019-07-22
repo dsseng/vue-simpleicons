@@ -17,17 +17,17 @@
     "@types/jest": "^24.0.11",
     "@vue/test-utils": "^1.0.0-beta.27",
     "@vuepress/plugin-pwa": "^1.0.0-alpha.0",
-    "commitizen": "^3.0.5",
+    "commitizen": "^4.0.3",
     "eslint": "^6.0.0",
-    "eslint-config-prettier": "^5.0.0",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.0.0",
-    "husky": "^2.1.0",
+    "husky": "^3.0.0",
     "jest": "^24.5.0",
     "prettier": "^1.15.3",
-    "release-it": "^11.0.0",
+    "release-it": "^12.3.0",
     "rimraf": "^2.6.3",
-    "rollup": "^1.6.0",
-    "rollup-plugin-typescript2": "^0.21.0",
+    "rollup": "^1.15.6",
+    "rollup-plugin-typescript2": "^0.22.0",
     "ts-jest": "^24.0.0",
     "typescript": "^3.3.4000",
     "typescript-eslint-parser": "^21.0.2",
@@ -46,13 +46,13 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "release": "release-it",
-    "clean": "rimraf .rpt2_cache coverage *.log *.tgz"
+    "clean": "rimraf .rpt2_cache coverage dist *.log *.tgz"
   },
   "dependencies": {
-    "simple-icons": "^1.9.28",
+    "simple-icons": "^1.10.0",
     "vue": "^2.6.9",
     "vue-class-component": "^7.0.0",
-    "vue-property-decorator": "^8.0.0"
+    "vue-property-decorator": "^8.2.1"
   },
   "release-it": {
     "git": {

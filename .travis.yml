@@ -9,6 +9,8 @@ jobs:
     - stage: "Test"
       name: "Unit (v8)"
       node_js: v8
+      install:
+        - yarn install --ignore-engines
       script:
         - yarn unit
     - stage: "Test"

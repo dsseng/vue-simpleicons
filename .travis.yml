@@ -1,14 +1,35 @@
 language: node_js
-env:
-  - TEST_SUITE=unit
-  - TEST_SUITE=lint
-node_js:
-  - node
-  - lts/*
-  - v8
-install:
-  - npm install -g codecov
-  - yarn
-script:
-  - yarn $TEST_SUITE
-  - if [ "$TEST_SUITE" == "unit" ]; then codecov; fi
+jobs:
+  include:
+    - stage: "Test"
+      name: "Unit (lts)"
+      node_js: lts/*
+      script:
+        - yarn unit
+    - stage: "Test"
+      name: "Unit (v8)"
+      node_js: v8
+      install:
+        - yarn install --ignore-engines
+      script:
+        - yarn unit
+    - stage: "Test"
+      name: "Unit (node)"
+      node_js: node
+      script:
+        - yarn unit
+      after_script:
+        codecov
+    - name: "Lint"
+      node_js: node
+      script:
+        - yarn lint
+    - name: "Build"
+      node_js: node
+      script:
+        - yarn build
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change

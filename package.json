@@ -50,7 +50,7 @@
     "clean": "rimraf .rpt2_cache coverage dist *.log *.tgz"
   },
   "dependencies": {
-    "simple-icons": "^1.10.0",
+    "simple-icons": "^2.7.0",
     "vue": "^2.6.9",
     "vue-class-component": "^7.0.0",
     "vue-property-decorator": "^8.2.1"
